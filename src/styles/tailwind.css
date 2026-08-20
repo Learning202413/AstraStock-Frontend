@@ -2,3 +2,15 @@
 @source '../**/*.{js,ts,jsx,tsx}';
 
 @import 'tw-animate-css';
+
+@theme {
+  --color-navy: #0b1b42;
+  --color-cobalt: #1b3eb5;
+  --color-sky-brand: #02b5e2;
+  --color-cyan-brand: #00c4e8;
+  --color-cyan-mid: #4dd8ee;
+  --color-cyan-faint: rgba(0, 196, 232, 0.45);
+  --color-silver: #96b0c0;
+  --color-silver-faint: rgba(150, 176, 192, 0.45);
+  --font-sans: 'Be Vietnam Pro', sans-serif;
+}

@@ -30,6 +30,28 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://backend.test',
+        changeOrigin: true,
+      },
+      '/sanctum': {
+        target: 'http://backend.test',
+        changeOrigin: true,
+      }
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom', 'zustand', 'axios'],
+          ui: ['lucide-react', 'sonner']
+        }
+      }
+    }
+  },
 
   // File types to support raw imports. Never add .css, .tsx, or .ts files to this.
   assetsInclude: ['**/*.svg', '**/*.csv'],
